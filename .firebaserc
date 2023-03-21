@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ecothreads-8fe49": {
+      "hosting": {
+        "ecoThreads": [
+          "ecothreads"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ecothreads-8fe49"
+  }
+}
