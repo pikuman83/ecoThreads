@@ -1,81 +1,19 @@
 <div class="app-container">
-  <div class="top-bar">
-    <img
-      width="48"
-      src="../assets/Bottom-bar/icons8-camiseta-64.png"
-      alt="Cloths recycle icon"
-    />
-    <span>{{ title }}</span>
-  </div>
-  <div class="content" role="main">
-    <!-- Resources -->
-    <h2>Resources</h2>
-    <p>Here are some links to help you get started:</p>
-
-    <div class="card-container">
-      <a
-        class="card"
-        target="_blank"
-        rel="noopener"
-        href="https://angular.io/tutorial"
-      >
-        <svg
-          class="material-icons"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
-          />
-        </svg>
-        <span>Learn Angular</span>
-        <svg
-          class="material-icons"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-        </svg>
-      </a>
-      <router-outlet></router-outlet>
-    </div>
-    <div class="toolbar" role="menu">
-      <div class="menu-button">
-        <img
-          src="./../assets/Bottom-bar/icons8-página-principal-25.png"
-          alt="Home"
-        />
-        <div>Home</div>
-      </div>
-      <div class="menu-button">
-        <img src="./../assets/Bottom-bar/icons8-búsqueda-25.png" alt="" />
-        <div>Search</div>
-      </div>
-      <div class="menu-button">
-        <img
-          src="./../assets/Bottom-bar/icons8-tienda-online-30.png"
-          alt="Sell"
-        />
-        <div>Sell</div>
-      </div>
-      <div class="menu-button">
-        <img
-          src="./../assets/Bottom-bar/icons8-burbuja-de-diálogo-48.png"
-          alt="Chat"
-        />
-        <div>Chat</div>
-      </div>
-      <div class="menu-button">
-        <img
-          src="./../assets/Bottom-bar/icons8-usuario-de-género-neutro-64.png"
-          alt="Profile"
-        />
-        <div>Profile</div>
-      </div>
-    </div>
-  </div>
+	<div class="top-bar">
+		<img
+			width="48"
+			src="../assets/home/logo_transparent.png"
+			alt="Cloths recycle icon"
+		/>
+		<span>{{ title }}</span>
+	</div>
+	<div class="content" role="main">
+		<router-outlet></router-outlet>
+		<button (click)="login()">Login</button>
+		<div *ngIf="user">
+			<h1>{{user.user.displayName}}</h1>
+			<img *ngIf="user.user.photoURL" [src]="user.user.photoURL" alt="User Photo">
+		</div>
+		<app-bottom-bar></app-bottom-bar>
+	</div>
 </div>
